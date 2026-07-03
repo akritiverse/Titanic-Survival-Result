@@ -54,10 +54,12 @@ if st.button("Predict"):
     probability = model.predict_proba(data)
 
     if prediction[0] == 1:
-        st.success("Passenger Survived ✅")
+        st.success("Passenger Survived ")
     else:
-        st.error("Passenger Did Not Survive ❌")
+        st.error("Passenger Did Not Survive ")
 
-    st.write("Prediction Probability")
+    survival_prob = probability[0][1] * 100
 
-    st.write(probability)
+    st.write("### Survival Probability")
+    st.progress(int(survival_prob))
+    st.write(f"**{survival_prob:.2f}%** chance of survival")
