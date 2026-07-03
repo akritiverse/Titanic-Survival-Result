@@ -2,10 +2,36 @@ import streamlit as st
 import joblib
 import pandas as pd
 
+st.set_page_config(
+    page_title="Titanic Survival Predictor",
+    page_icon="🚢",
+    layout="centered"
+)
+
 # Load Model
 model = joblib.load("titanic_model.pkl")
 
-st.title("Titanic Survival Prediction")
+st.title("🚢 Titanic Survival Prediction")
+st.markdown("### Predict whether a passenger would survive the Titanic disaster.")
+st.markdown("---")
+
+st.sidebar.title("ℹ️ About")
+
+st.sidebar.info("""
+**Machine Learning Project**
+
+Model: Logistic Regression
+
+Dataset: Titanic Dataset
+
+Language: Python
+
+Framework: Streamlit
+
+Library: Scikit-learn
+""")
+
+st.sidebar.success("Model Accuracy: 82.68%")
 
 st.write("Enter Passenger Details")
 
