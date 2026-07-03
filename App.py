@@ -33,7 +33,7 @@ Library: Scikit-learn
 
 st.sidebar.success("Model Accuracy: 82.68%")
 
-st.write("Enter Passenger Details")
+st.subheader("📝 Enter Passenger Details")
 
 pclass = st.selectbox("Passenger Class", [1, 2, 3])
 
@@ -73,7 +73,7 @@ data = pd.DataFrame(
     ]
 )
 
-if st.button("Predict"):
+if st.button("🔍 Predict Survival"):
 
     prediction = model.predict(data)
 
@@ -89,3 +89,15 @@ if st.button("Predict"):
     st.write("### Survival Probability")
     st.progress(int(survival_prob))
     st.write(f"**{survival_prob:.2f}%** chance of survival")
+    st.markdown("---")
+
+st.info("""
+## 👩‍💻 Developer
+
+**Akriti Mishra**
+
+🎓 BCA (Machine Learning & Data Science)
+
+
+💻 Python | Scikit-learn | Streamlit
+""")
